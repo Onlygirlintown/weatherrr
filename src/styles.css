@@ -1,7 +1,13 @@
 :root {
   --headings-font-family: "Libre Baskerville", serif;
   --secondary-font-family: "Anek Tamil", sans-serif;
-  --primary-color: #fafdd6;
+  --primary-color: #e4e9be;
+  --secondary-color: #fafdd6;
+  --primary-font-color: #e6ba95;
+  --secondary-font-color: #a2b38b;
+}
+.mainpage {
+  background-color: var(--secondary-color);
 }
 .container {
   background-color: #fafdd6;
@@ -43,4 +49,15 @@ button {
   margin: 10px;
   font-family: var(--secondary-font-family);
   font-weight: 800;
+}
+footer {
+  text-align: center;
+  padding-top: 20px;
+}
+footer {
+  color: var(--primary-font-color);
+}
+.githubLink {
+  color: var(--secondary-font-color);
+  text-decoration: none;
 }

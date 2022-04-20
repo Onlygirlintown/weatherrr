@@ -4,8 +4,19 @@ import WeatherApp from "./WeatherApp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <div>
-    <WeatherApp />
+  <div className="mainPage">
+    <div>
+      <WeatherApp />
+    </div>
+    <footer>
+      Coded by{" "}
+      <a
+        className="githubLink"
+        href="https://github.com/Onlygirlintown/weatherrr"
+      >
+        Alexandra Chitacapa
+      </a>
+    </footer>
   </div>
 );
 

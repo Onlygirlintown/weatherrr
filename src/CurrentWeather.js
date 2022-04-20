@@ -13,7 +13,7 @@ export default function CurrentWeather() {
         />
         <h1>68 F</h1>
         <p className="currentWeatherInfo"> 30mph</p>
-        <p className="currentWeatherInfo"> clear skies</p>
+        <p className="currentWeatherInfo"> Clear skies</p>
         <p className="currentWeatherInfo"> Humidity 30 %</p>
       </div>
       <WeekForecast />
