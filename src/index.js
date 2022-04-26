@@ -14,7 +14,7 @@ root.render(
         className="githubLink"
         href="https://github.com/Onlygirlintown/weatherrr"
       >
-        Alexandra Chitacapa
+        Alexandra Chitacapa!!!
       </a>
     </footer>
   </div>
