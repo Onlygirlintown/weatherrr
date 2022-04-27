@@ -62,9 +62,12 @@ button {
   color: var(--secondary-font-color);
   font-size: 50px;
 }
-.degree {
+.degreeSpan {
   color: var(--secondary-font-color);
   position: absolute;
+  margin-left: 30px;
+  margin-top: -70px;
+  font-weight: bold;
 }
 .currentWeatherInfo {
   font-family: var(-- --secondary-font-family);

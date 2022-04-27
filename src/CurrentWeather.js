@@ -1,9 +1,7 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles.css";
-import WeekForecast from "./WeekForecast";
+import FormattedDate from "./FormattedDate";
 
-export default function CurrentWeather() {
+export default function CurrentWeather(props) {
   return (
     <div className="row">
       <div className="col-3 currentWeatherDiv">
@@ -14,17 +12,27 @@ export default function CurrentWeather() {
           />
         </div>
         <div className="degreeDiv">
-          <h2 className="currentDayDegree">68°</h2>
-          <span className="degree">F</span>/<span className="degree">C</span>
+          <h2 className="currentDayDegree">
+            {Math.round(props.data.temperature)}°
+          </h2>
+          <span className="degreeSpan">
+            <span>F</span>/<span>C</span>
+          </span>
         </div>
-        <h1>San Diego</h1>
+        <h1>{props.data.city}</h1>
       </div>
       <div className="col-3 currentWeatherDiv">
-        <p className="currentWeatherInfo"> 30mph</p>
-        <p className="currentWeatherInfo"> Clear skies</p>
-        <p className="currentWeatherInfo"> Humidity: 30 %</p>
+        <p className="currentWeatherInfo">
+          {" "}
+          Wind: {Math.round(props.data.wind)} mph
+        </p>
+        <p className="currentWeatherInfo"> Skies: {props.data.description}</p>
+        <p className="currentWeatherInfo"> Humidity: {props.data.humidity}%</p>
+        <p className="currentWeatherInfo">
+          {" "}
+          <FormattedDate date={props.data.date} />
+        </p>
       </div>
-      <WeekForecast />
     </div>
   );
 }
