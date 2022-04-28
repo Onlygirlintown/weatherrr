@@ -6,10 +6,7 @@ export default function CurrentWeather(props) {
     <div className="row">
       <div className="col-3 currentWeatherDiv">
         <div className="weatherIcon">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-            alt="weather-pic"
-          />
+          <img src={props.data.iconUrl} alt="weather-pic" />
         </div>
         <div className="degreeDiv">
           <h2 className="currentDayDegree">
