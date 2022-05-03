@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
-import WeekForecast from "./WeekForecast";
 import CurrentWeather from "./CurrentWeather";
 
 export default function WeatherSearch(props) {
@@ -54,7 +53,6 @@ export default function WeatherSearch(props) {
         </div>
         <div className="row">
           <CurrentWeather data={weatherData} />
-          <WeekForecast />
         </div>
       </div>
     );

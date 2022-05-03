@@ -1,5 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeekForecast from "./WeekForecast";
+import ShowTemperature from "./ShowTemperature";
 
 export default function CurrentWeather(props) {
   return (
@@ -8,28 +10,21 @@ export default function CurrentWeather(props) {
         <div className="weatherIcon">
           <img src={props.data.iconUrl} alt="weather-pic" />
         </div>
-        <div className="degreeDiv">
-          <h2 className="currentDayDegree">
-            {Math.round(props.data.temperature)}°
-          </h2>
-          <span className="degreeSpan">
-            <span>F</span>/<span>C</span>
-          </span>
-        </div>
-        <h1>{props.data.city}</h1>
+        <ShowTemperature temp={Math.round(props.data.temperature)} />
       </div>
+      <h1>{props.data.city}</h1>
       <div className="col-3 currentWeatherDiv">
         <p className="currentWeatherInfo">
-          {" "}
+          <p>
+            <FormattedDate date={props.data.date} />
+          </p>{" "}
           Wind: {Math.round(props.data.wind)} mph
         </p>
         <p className="currentWeatherInfo"> Skies: {props.data.description}</p>
         <p className="currentWeatherInfo"> Humidity: {props.data.humidity}%</p>
-        <p className="currentWeatherInfo">
-          {" "}
-          <FormattedDate date={props.data.date} />
-        </p>
+        <p className="currentWeatherInfo"> </p>
       </div>
+      <WeekForecast />
     </div>
   );
 }

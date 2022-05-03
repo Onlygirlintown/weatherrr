@@ -69,6 +69,13 @@ button {
   margin-top: -70px;
   font-weight: bold;
 }
+.degreeSpan a {
+  text-decoration: none;
+  color: var(--secondary-font-color);
+}
+:hover.degreeSpan a {
+  color: var(--primary-font-color);
+}
 .currentWeatherInfo {
   font-family: var(-- --secondary-font-family);
   font-weight: 500;
@@ -102,4 +109,8 @@ footer {
 .githubLink {
   color: var(--secondary-font-color);
   text-decoration: none;
+}
+
+.spandegree {
+  color: aqua;
 }

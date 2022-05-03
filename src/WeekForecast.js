@@ -15,7 +15,7 @@ export default function WeekForecast() {
           />
         </span>
         <span className="weekDayStat">68 H</span>
-        <span className="weekDayStat">30 L</span>
+        <span className="weekDayStat">30 Low</span>
       </p>
       <p className="forecastContainer">
         <span className="weekDay">Tuesday</span>
