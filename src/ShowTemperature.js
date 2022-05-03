@@ -16,8 +16,11 @@ export default function ShowTemperature(props) {
     return (
       <div>
         <span className="spandegree">{Math.round(props.temp)}°</span>
-        <a href="/">F</a> /
-        <a href="/" onCLick={showCelsius}>
+        <a href="/" className="inactive">
+          F
+        </a>{" "}
+        /
+        <a href="/" className="active" onClick={showCelsius}>
           C
         </a>
       </div>
@@ -27,10 +30,13 @@ export default function ShowTemperature(props) {
     return (
       <div>
         <span className="spandegree">{Math.round(celsius)}°</span>
-        <a href="/" onCLick={showFahrenheit}>
+        <a href="/" className="active" onClick={showFahrenheit}>
           F
         </a>{" "}
-        /<a href="/">C</a>
+        /
+        <a href="/" className="inactive">
+          C
+        </a>
       </div>
     );
   }
