@@ -8,7 +8,7 @@ export default function ShowTemperature(props) {
     setUnit("celsius");
   }
   function showFahrenheit(event) {
-    event.prevetmDefault();
+    event.preventDefault();
     setUnit("fahrenheit");
   }
 

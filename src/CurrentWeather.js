@@ -1,6 +1,5 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
-import WeekForecast from "./WeekForecast";
 import ShowTemperature from "./ShowTemperature";
 
 export default function CurrentWeather(props) {
@@ -24,7 +23,6 @@ export default function CurrentWeather(props) {
         <p className="currentWeatherInfo"> Humidity: {props.data.humidity}%</p>
         <p className="currentWeatherInfo"> </p>
       </div>
-      <WeekForecast />
     </div>
   );
 }

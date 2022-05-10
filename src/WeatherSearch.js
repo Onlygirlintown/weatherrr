@@ -3,14 +3,18 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import CurrentWeather from "./CurrentWeather";
+import WeekForecast from "./WeekForecast";
 
 export default function WeatherSearch(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
   function showWeather(response) {
+    console.log(response.data.coord);
+
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
@@ -54,6 +58,8 @@ export default function WeatherSearch(props) {
         <div className="row">
           <CurrentWeather data={weatherData} />
         </div>
+
+        <WeekForecast coords={weatherData.coordinates} />
       </div>
     );
   } else {
