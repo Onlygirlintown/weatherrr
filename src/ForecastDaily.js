@@ -6,31 +6,39 @@ export default function ForecastDaily(props) {
     let day = date.getDay();
 
     let days = [
-      "sunday",
-      "monday",
-      "tuesday",
-      "wednesday",
-      "thursday",
-      "friday",
-      "saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
     ];
 
     return days[day];
   }
+
+  function maxTemperature() {
+    let maxTemperature = Math.round(props.data.temp.max);
+    return `${maxTemperature}°`;
+  }
+
+  function minTemperature() {
+    let minTemperature = Math.round(props.data.temp.min);
+    return `${minTemperature}°`;
+  }
   return (
     <span className="weekDay">
-      {day()}
+      <span className="weekDaySpan">{day()}</span>
       <span className="weekForecastInfo">
         <img
           className="weekDayStat"
-          src={`http://openweathermap.org/img/wn/${props.data[0].weather[0].icon}@2x.png`}
-          alt="weather emoji"
+          src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}
+          alt="weather icon"
         />
       </span>
-      <span className="weekDayStat">{Math.round(props.data[0].temp.max)}</span>
-      <span className="weekDayStat">
-        {Math.round(props.data[0].temp.min)} Low
-      </span>
+      <span className="weekDayStat">{maxTemperature()}</span>
+      <span className="weekDayStat">{minTemperature()} Low</span>
     </span>
   );
 }

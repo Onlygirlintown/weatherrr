@@ -10,8 +10,7 @@ export default function WeatherSearch(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function showWeather(response) {
-    console.log(response.data.coord);
-
+    console.log(weatherData.coordinates);
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,
@@ -56,10 +55,15 @@ export default function WeatherSearch(props) {
           </form>
         </div>
         <div className="row">
-          <CurrentWeather data={weatherData} />
+          <div className="col-6">
+            <div className="dayOfForecastDiv">
+              <CurrentWeather data={weatherData} />
+            </div>
+          </div>
+          <div className="col-6">
+            <WeekForecast coords={weatherData.coordinates} />
+          </div>
         </div>
-
-        <WeekForecast coords={weatherData.coordinates} />
       </div>
     );
   } else {
