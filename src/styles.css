@@ -12,6 +12,7 @@
 .container {
   background-color: #fafdd6;
   border-radius: 15px;
+  max-width: 1150px;
   box-shadow: 5px 10px 5px var(--primary-font-color);
 }
 .searchBar {
@@ -150,4 +151,34 @@ footer {
   color: var(--primary-font-color);
 }
 :hover.unitSpan {
+}
+
+@media (max-width: 840px) {
+  .container {
+    max-width: 90%;
+  }
+}
+@media (max-width: 570px) {
+  .searchBar {
+    font-size: 20px;
+  }
+  .currentWeatherDiv h1 {
+    font-size: 40px;
+  }
+  .weatherIcon {
+    font-size: 10px;
+  }
+  .spandegree {
+    font-size: 45px;
+  }
+}
+.dayOfForecastDiv {
+  margin-top: 0px;
+}
+.unitSpan {
+  position: absolute;
+  margin-left: 55px;
+}
+.currentDaySpan {
+  font-size: 30px;
 }

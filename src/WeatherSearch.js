@@ -54,13 +54,17 @@ export default function WeatherSearch(props) {
             </button>
           </form>
         </div>
-        <div className="row">
-          <div className="col-6">
+        <div className="row d-md-block">
+          <div className="col-6 col-sm-auto col-12">
             <div className="dayOfForecastDiv">
               <CurrentWeather data={weatherData} />
             </div>
           </div>
-          <div className="col-6">
+          <div
+            className="col-6 col-sm-auto col-12
+
+          "
+          >
             <WeekForecast coords={weatherData.coordinates} />
           </div>
         </div>

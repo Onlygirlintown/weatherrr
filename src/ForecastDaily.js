@@ -9,7 +9,7 @@ export default function ForecastDaily(props) {
       "Sunday",
       "Monday",
       "Tuesday",
-      "Wednesday",
+      "Wednes",
       "Thursday",
       "Friday",
       "Saturday",
@@ -37,7 +37,7 @@ export default function ForecastDaily(props) {
           alt="weather icon"
         />
       </span>
-      <span className="weekDayStat">{maxTemperature()}</span>
+      <span className="weekDayStat">{maxTemperature()} High</span>
       <span className="weekDayStat">{minTemperature()} Low</span>
     </span>
   );
