@@ -49,19 +49,17 @@ export default function WeatherSearch(props) {
               placeholder="Type City"
               onChange={handleCityInput}
             />
-            <button type="button" className="btn btn-primary" placeholder="📍">
-              📍
-            </button>
+            <input type="submit" value="📍" className="btn btn-primary" />
           </form>
         </div>
         <div className="row d-md-block">
-          <div className="col-6 col-sm-auto col-12">
+          <div className="col-6 col-md-auto col-12">
             <div className="dayOfForecastDiv">
               <CurrentWeather data={weatherData} />
             </div>
           </div>
           <div
-            className="col-6 col-sm-auto col-12
+            className="col-6 col-md-auto col-12
 
           "
           >
