@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import CurrentWeather from "./CurrentWeather";
 import WeekForecast from "./WeekForecast";
+import ShowSearch from "./ShowSearch";
 
 export default function WeatherSearch(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -56,6 +57,7 @@ export default function WeatherSearch(props) {
           <div className="col-6 col-md-auto col-12">
             <div className="dayOfForecastDiv">
               <CurrentWeather data={weatherData} />
+              <ShowSearch city={city} />
             </div>
           </div>
           <div
