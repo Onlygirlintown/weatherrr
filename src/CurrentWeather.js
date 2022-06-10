@@ -1,5 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import ShowTemperature from "./ShowTemperature";
+
 export default function CurrentWeather(props) {
   return (
     <div className="row">
@@ -7,10 +9,7 @@ export default function CurrentWeather(props) {
         <span className="weatherIcon">
           <img src={props.data.iconUrl} alt="weather-pic" />
         </span>
-        <span className="tempSpan">
-          {Math.round(props.data.temperature)}{" "}
-          <span className="unitSpan">F</span>
-        </span>
+        <ShowTemperature temp={Math.round(props.data.temperature)} />
         <h1>{props.data.city}</h1>
       </div>
       <div className="col-6 currentWeatherDiv">
