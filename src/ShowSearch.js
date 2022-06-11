@@ -1,18 +1,18 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function ShowSearch(props) {
-  console.log(props.city);
   const [eventsList, setEventsList] = useState([]);
 
   let apiKey = "9xQ693M4hEMA4PNc";
   let city = props.city;
   let apiUrl = `https://api.songkick.com/api/3.0/search/locations.json?query=${city}&apikey=${apiKey}`;
 
-  axios.get(apiUrl).then(handleSongkickApi);
-
+  useEffect(() => {
+    axios.get(apiUrl).then(handleSongkickApi);
+  }, []);
+  console.log("showsearch");
   function handleShowsSearch(response) {
-    console.log(response.data.resultsPage.results.event);
     setEventsList(response.data.resultsPage.results.event);
   }
 
@@ -26,9 +26,10 @@ export default function ShowSearch(props) {
     let json = JSON.parse(response.request.response);
     const city = json.resultsPage.results.location[0].metroArea.id;
     cityShowsSearch(city);
+    console.log("songlist");
   }
   const events = eventsList.map((event, index) => {
-    return <div key={index}>{event.displayName}</div>;
+    if (index < 4) return <div key={index}>{event.displayName}</div>;
   });
   return <div>{events.length > 0 ? events : null}</div>;
 }

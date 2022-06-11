@@ -7,6 +7,7 @@ import WeekForecast from "./WeekForecast";
 import ShowSearch from "./ShowSearch";
 
 export default function WeatherSearch(props) {
+  console.log("weathersearch");
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
