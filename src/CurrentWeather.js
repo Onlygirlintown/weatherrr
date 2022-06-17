@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 export default function CurrentWeather(props) {
+  console.log("poop");
   return (
     <div className="row">
       <div className="col-6 currentWeatherDiv">
@@ -15,9 +16,9 @@ export default function CurrentWeather(props) {
       </div>
       <div className="col-6 currentWeatherDiv">
         <div className="currentWeatherInfo">
-          <p>
+          <div>
             <FormattedDate date={props.data.date} />
-          </p>{" "}
+          </div>{" "}
           Wind: {Math.round(props.data.wind)} mph
         </div>
         <p className="currentWeatherInfo text-capitalize">

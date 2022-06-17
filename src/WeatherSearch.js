@@ -7,7 +7,6 @@ import WeekForecast from "./WeekForecast";
 import ShowSearch from "./ShowSearch";
 
 export default function WeatherSearch(props) {
-  console.log("weathersearch");
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
@@ -26,19 +25,18 @@ export default function WeatherSearch(props) {
     });
   }
 
-  function handleInput(event) {
-    event.preventDefault();
-    searchWeather();
-  }
-  function handleCityInput(event) {
-    setCity(event.target.value);
-  }
   function searchWeather() {
     const apiKey = "ff603b4615415a7ed5f7b26e07b59db6";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
     axios.get(apiUrl).then(showWeather);
   }
+
+  function handleInput(event) {
+    event.preventDefault();
+    searchWeather();
+  }
+  console.log(weatherData.ready);
 
   if (weatherData.ready) {
     return (
@@ -49,7 +47,9 @@ export default function WeatherSearch(props) {
               type="search"
               className="searchBar"
               placeholder="Type City"
-              onChange={handleCityInput}
+              value={city}
+              autoFocus="on"
+              onChange={(e) => setCity(e.target.value)}
             />
             <input type="submit" value="🔎" className="btn btn-primary" />
           </form>
@@ -58,8 +58,10 @@ export default function WeatherSearch(props) {
           <div className="col-6 col-md-auto col-12">
             <div className="dayOfForecastDiv">
               <CurrentWeather data={weatherData} />
-              <ShowSearch city={city} />
             </div>
+          </div>
+          <div className="row">
+            <ShowSearch city={weatherData} />
           </div>
           <div
             className="col-6 col-md-auto col-12
